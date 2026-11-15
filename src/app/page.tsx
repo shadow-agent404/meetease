@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import MacWindow from "@/components/MacWindow";
 
 export default function HomePage() {
