@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MeetEase
 
-## Getting Started
+校园活动的发布与查找平台。活动列表、地图定位、数据存储都在一个应用里。
 
-First, run the development server:
+- Next.js 16（App Router）+ React 19 + TypeScript
+- Prisma 6 + libsql：数据库可以是本地 SQLite 文件，也可以是远程实例
+- Leaflet / react-leaflet 在地图上标活动地点
+- Tailwind CSS 4
+
+## 本地运行
+
+需要 Node.js 20 以上。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npx prisma migrate dev   # 建表
+npm run dev              # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+数据库地址写在 `.env` 的 `DATABASE_URL`，Prisma 通过 libsql adapter 连接。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 目录
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/        页面、组件与数据访问
+prisma/     schema 与迁移
+public/     静态资源
+```
 
-## Learn More
+## 状态
 
-To learn more about Next.js, take a look at the following resources:
+版本 0.1.0，功能以 `src/` 下实际页面为准。README 不列未验证的完成度，避免写得比代码多。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 开发约定
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+改数据库结构先改 `prisma/schema.prisma`，再跑 `npx prisma migrate dev`，不手写建表 SQL。其他约定写在 `AGENTS.md` 和 `CLAUDE.md`，改代码前先读。
