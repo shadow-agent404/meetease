@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import MacWindow from "@/components/MacWindow";
 
 export default function HomePage() {
@@ -314,7 +314,7 @@ export default function HomePage() {
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a
-                    href="https://github.com/chcucu/meetease"
+                    href="https://github.com/shadow-agent404/meetease"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 hover:text-white transition"
@@ -338,7 +338,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/chcucu/meetease/issues"
+                    href="https://github.com/shadow-agent404/meetease/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 hover:text-white transition"
